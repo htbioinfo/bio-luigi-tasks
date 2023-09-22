@@ -16,10 +16,25 @@ VERSION = '0.0.1'
 
 # What packages are required for this module to be executed?
 REQUIRED = [
+    'luigi'
 ]
+
+
+def _unique_lst(*args):
+    elements = set()
+    for lst in args:
+        for element in lst:
+            elements.add(element)
+    return list(elements)
+
+
+_merge_dir = []
+_all = _unique_lst(_merge_dir)
 
 # What packages are optional?
 EXTRAS = {
+    'merge-dir': _merge_dir,
+    'all': _all
 }
 
 
